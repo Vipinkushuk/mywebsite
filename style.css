@@ -364,12 +364,6 @@ article .icon {
   background: rgb(250, 250, 250);
 }
 
-.project-img {
-  border-radius: 2rem;
-  width: 90%;
-  height: 90%;
-}
-
 .project-title {
   margin: 1rem;
   color: black;
@@ -378,6 +372,46 @@ article .icon {
 .project-btn {
   color: black;
   border-color: rgb(163, 163, 163);
+}
+
+/* ✅ Staircase Zig-Zag Layout (like you drew) */
+.projects-zigzag {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  width: 100%;
+  max-width: 900px; /* container width */
+  margin: 0 auto;
+}
+
+.projects-zigzag .project-card {
+  width: 70%; /* card width */
+  padding: 1.5rem;
+}
+
+/* 1st, 3rd... => LEFT */
+.projects-zigzag .project-card:nth-child(odd) {
+  margin-left: 0;
+}
+
+/* 2nd, 4th... => RIGHT (push by 100 - width = 30%) */
+.projects-zigzag .project-card:nth-child(even) {
+  margin-left: 30%;
+}
+
+/* Image wrapper for rounded corners */
+.projects-zigzag .project-image-wrap {
+  width: 100%;
+  border-radius: 1.25rem;
+  overflow: hidden;
+}
+
+/* Rectangular images look good */
+.projects-zigzag .project-img {
+  width: 100%;
+  height: 240px;
+  object-fit: cover;
+  display: block;
 }
 
 /* CONTACT */
